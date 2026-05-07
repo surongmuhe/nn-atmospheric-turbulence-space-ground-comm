@@ -1,0 +1,6 @@
+﻿name,modulation,code_rate,spectral_efficiency,required_snr_db,description
+MCS0-Survival,BPSK,1/3,0.35,3.0,Emergency mode for severe turbulence and link survival.
+MCS1-Robust,QPSK,1/2,1.0,7.0,Robust low-rate mode with strong FEC protection.
+MCS2-Balanced,QPSK,0.9,1.8,11.0,Balanced mode for moderate turbulence.
+MCS3-HighRate,16-QAM,3/4,3.0,15.5,High-rate mode with moderate coding overhead.
+MCS4-Peak,16-QAM,5/6,4.2,19.0,Peak-throughput mode used only when the fade margin is high.

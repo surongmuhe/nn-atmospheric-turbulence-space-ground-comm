@@ -1,0 +1,21 @@
+{
+  "config": {
+    "wavelength_m": 1.55e-06,
+    "effective_turbulence_path_m": 500.0,
+    "clear_sky_snr_db": 20.0,
+    "outage_penalty": 8.0,
+    "outage_floor": 1e-09,
+    "outage_ceiling": 0.999999999,
+    "max_rytov_variance": 3.0
+  },
+  "rows": 3225,
+  "date_start": "2021-06-19 18:50:00",
+  "date_end": "2021-06-30 23:30:00",
+  "persistence_lag_steps": 6,
+  "best_forecast_policy": "Improved LSTM Policy",
+  "best_forecast_avg_mission_utility": 2.3627220409419896,
+  "best_forecast_avg_goodput": 2.5463871705232486,
+  "best_forecast_outage_rate": 0.02295814119765736,
+  "best_forecast_availability": 0.9770418588023426,
+  "output_dir": "C:\\Users\\33640\\Desktop\\lstm\\fusion_forecasting_project\\outputs\\link_adaptation_sim_20260426"
+}

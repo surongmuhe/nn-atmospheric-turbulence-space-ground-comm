@@ -1,0 +1,21 @@
+{
+  "primary_model": "mlp",
+  "analysis_model": "mlp",
+  "best_model": "mlp",
+  "best_metrics": {
+    "model": "mlp",
+    "RMSE": 0.13474212466817737,
+    "MAE": 0.09770692002731965,
+    "MAPE": 0.0073111464879892524,
+    "R2": 0.891486894428533,
+    "RMSE_h1": 0.13474212466817737
+  },
+  "checkpoint": "C:\\Users\\33640\\Desktop\\fusion_forecasting_project\\outputs\\strict_independent_ablation_20260501\\runs\\mlp_window_same_features\\seed_52\\checkpoints\\mlp_best.pt",
+  "all_checkpoints": {
+    "mlp": "C:\\Users\\33640\\Desktop\\fusion_forecasting_project\\outputs\\strict_independent_ablation_20260501\\runs\\mlp_window_same_features\\seed_52\\checkpoints\\mlp_best.pt"
+  },
+  "active_models": [
+    "mlp"
+  ],
+  "fusion_enabled": false
+}

@@ -1,0 +1,23 @@
+{
+  "output_root": "C:\\Users\\33640\\Desktop\\lstm\\fusion_forecasting_project\\outputs\\external_site_lstm_raw_sweep_20260426",
+  "target_mode": "delta",
+  "epochs": 45,
+  "batch_size": 128,
+  "num_candidates": 13,
+  "best_by_val": {
+    "model": "lstm",
+    "RMSE": 0.189225833979069,
+    "MAE": 0.1383832470596244,
+    "MAPE": 0.0101369949697146,
+    "R2": 0.899077793015801,
+    "RMSE_h1": 0.189225833979069,
+    "hidden_size": 96,
+    "num_layers": 1,
+    "dropout": 0.0,
+    "learning_rate": 0.001,
+    "candidate": "hs96_l1_do0p0_lr0p001",
+    "output_dir": "C:\\Users\\33640\\Desktop\\lstm\\fusion_forecasting_project\\outputs\\external_site_lstm_raw_sweep_20260426\\hs96_l1_do0p0_lr0p001",
+    "min_val_loss": 0.091394
+  },
+  "generated_at": "2026-04-26T19:11:03"
+}
