@@ -1,0 +1,4 @@
+﻿adaptation_ratio,variant,model_label,method,method_key,common_test_timestamps,test_start,test_end,RMSE,MAE,MSE,R2
+0.05,lstm_improved,Improved LSTM,fewshot_finetuned,lstm_improved|fewshot_finetuned,10200,2006-06-12 09:00:00,2006-08-07 23:45:00,0.26770160360199563,0.18805116611560632,0.07166414857107999,0.8728219737022271
+0.1,lstm_improved,Improved LSTM,fewshot_finetuned,lstm_improved|fewshot_finetuned,9663,2006-06-14 21:55:00,2006-08-07 23:45:00,0.26048073666662497,0.17667293836073752,0.06785021417438764,0.8807026466133548
+0.2,lstm_improved,Improved LSTM,fewshot_finetuned,lstm_improved|fewshot_finetuned,8741,2006-06-27 04:35:00,2006-08-07 23:45:00,0.24756204878672983,0.16968261573163368,0.0612869679994832,0.8936545901641524

@@ -1,0 +1,17 @@
+{
+  "config": "C:\\Users\\33640\\Desktop\\lstm\\fusion_forecasting_project\\outputs\\strong_baselines_seq72_20260425\\_configs\\patchtst.yaml",
+  "output_root": "C:\\Users\\33640\\Desktop\\lstm\\fusion_forecasting_project\\outputs\\strong_baselines_seq72_20260425\\patchtst",
+  "seeds": [
+    42,
+    52,
+    62,
+    72,
+    82
+  ],
+  "focus_models": [
+    "patchtst"
+  ],
+  "best_model_by_mean_rmse": "patchtst",
+  "best_model_rmse_mean": 0.1438990983652718,
+  "best_model_rmse_std": 0.02295133153607766
+}

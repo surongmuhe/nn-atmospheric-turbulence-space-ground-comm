@@ -1,0 +1,13 @@
+{
+  "seeds": [
+    42,
+    52,
+    62,
+    72,
+    82
+  ],
+  "best_run_name": "lstm_improved",
+  "best_model": "lstm",
+  "best_rmse_mean": 0.1189876163714137,
+  "best_r2_mean": 0.9153491770940082
+}

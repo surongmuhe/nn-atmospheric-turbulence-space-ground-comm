@@ -1,0 +1,23 @@
+{
+  "zip_path": "data\\dataWfon0U.zip",
+  "output_csv": "data\\dataWfon0U_ml_ready.csv",
+  "rows_total": 17494,
+  "rows_logcn2_valid": 13463,
+  "time_begin": "2006-06-09 00:02:30",
+  "time_end": "2006-08-08 17:52:30",
+  "feature_columns": [
+    "LogCn2",
+    "Tair",
+    "RH_2m",
+    "Pair",
+    "Dir_10m",
+    "UmSonic",
+    "u_15m",
+    "v_15m",
+    "w_15m",
+    "tc_15m",
+    "is_daylight"
+  ],
+  "target_source": "log10(Cn2_15m)",
+  "daylight_proxy": "06:00 <= local hour < 18:00"
+}

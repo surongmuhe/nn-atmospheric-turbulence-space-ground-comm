@@ -1,0 +1,17 @@
+{
+  "root": "C:\\Users\\33640\\Desktop\\lstm\\fusion_forecasting_project\\outputs\\external_site_four_model_route_20260426_validated",
+  "variants": [
+    "ann_current",
+    "ann_window",
+    "lstm_raw",
+    "lstm_improved"
+  ],
+  "n_common": 399,
+  "r2_order_low_to_high": [
+    "ann_current",
+    "ann_window",
+    "lstm_raw",
+    "lstm_improved"
+  ],
+  "generated_at": "2026-04-26T19:11:37"
+}

@@ -1,0 +1,102 @@
+project:
+  name: thesis_lstm_raw
+  seed: 42
+  output_dir: outputs/thesis_lstm_route/lstm_raw
+  log_level: INFO
+
+data:
+  file_path: data/Sklavounos and Cohn, Spring. 2022.xlsx
+  datetime_col: Date
+  time_col: Time
+  feature_cols: [LogCn2, IRtemp, SolarFlux, H2Ocon, Tair, UmSonic, Pair]
+  target_col: LogCn2
+  seq_len: 144
+  pred_len: 3
+  resample_rule: 5min
+  train_ratio: 0.7
+  val_ratio: 0.15
+  target_mode: absolute
+  target_aggregation: multistep
+
+preprocess:
+  scaler: standard
+  status_col: STATUS
+  status_keep_values: [0]
+  drop_duplicate_timestamps: true
+  sequence_split:
+    use_context_history: true
+  interpolate:
+    enabled: false
+  time_features:
+    keep_temporal_hour: false
+    hour_cyclical: false
+    dayofyear_cyclical: false
+
+experiment:
+  primary_model: lstm
+  active_models: [lstm]
+  regime_split:
+    enabled: false
+
+train:
+  batch_size: 128
+  epochs: 40
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  optimizer: adamw
+  scheduler:
+    type: plateau
+    factor: 0.6
+    patience: 2
+    min_lr: 1.0e-5
+  shuffle_train: true
+  early_stop_patience: 8
+  num_workers: 0
+  grad_clip_norm: 1.0
+
+fusion:
+  enabled: false
+
+postprocess:
+  residual_correction:
+    enabled: false
+
+models:
+  mlp:
+    hidden_sizes: [256, 128]
+    dropout: 0.2
+  lstm:
+    hidden_size: 96
+    num_layers: 2
+    dropout: 0.1
+    bidirectional: false
+    attention_pool: false
+    ar_window: 0
+    context_window: 12
+  gru:
+    hidden_size: 64
+    num_layers: 2
+    dropout: 0.1
+  transformer:
+    d_model: 64
+    nhead: 4
+    num_layers: 2
+    ff_dim: 128
+    dropout: 0.1
+    use_positional_encoding: true
+    pooling: last
+  tcn:
+    channels: [64, 64]
+    kernel_size: 3
+    dropout: 0.2
+  cnn_lstm:
+    cnn_channels: 64
+    lstm_hidden: 128
+    lstm_layers: 2
+    dropout: 0.2
+
+wandb:
+  enabled: false
+  project: null
+  entity: null
+  run_name: null

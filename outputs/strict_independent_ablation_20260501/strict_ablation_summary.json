@@ -1,0 +1,33 @@
+{
+  "output_root": "C:\\Users\\33640\\Desktop\\fusion_forecasting_project\\outputs\\strict_independent_ablation_20260501",
+  "seeds": [
+    42,
+    52,
+    62,
+    72,
+    82
+  ],
+  "variants": [
+    "full_improved",
+    "no_future_mean_target",
+    "no_delta_target",
+    "no_time_cycle_features",
+    "no_domain_physics_features",
+    "no_solar_regime_features",
+    "no_diff_features",
+    "no_rolling_features",
+    "no_bidirectional_encoder",
+    "no_attention_pooling",
+    "no_short_ar_branch",
+    "no_input_projection",
+    "vanilla_lstm_same_features",
+    "mlp_window_same_features"
+  ],
+  "generated_files": [
+    "strict_ablation_seed_metrics.csv",
+    "strict_ablation_summary.csv",
+    "strict_ablation_summary.md",
+    "strict_ablation_rmse_delta.png",
+    "strict_ablation_r2_delta.png"
+  ]
+}

@@ -1,0 +1,59 @@
+# --- Python cache/env ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+
+# --- IDE/system ---
+.idea/
+.vscode/
+Thumbs.db
+.DS_Store
+
+# --- Temporary working files ---
+tmp_*
+*.tmp
+*.bak
+*.log
+
+# --- Model checkpoints and binary training caches ---
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.pkl
+*.npy
+*.npz
+**/checkpoint*/
+**/checkpoints/
+**/cache/
+
+# --- Render/QA intermediates, not final paper artifacts ---
+docs/render_*/
+docs/word_html_formula_check*/
+outputs/docx_render_check*/
+doc_relayout_work/
+
+# --- Downloaded papers are not committed for copyright/size reasons ---
+reference_downloads/
+reference_downloads_test/
+
+# --- Optional local raw-data scratch directories ---
+dataset/
+datasets/
+raw_data/
+processed_data/
+wandb/
+mlruns/
+tensorboard/
+lightning_logs/
+
+# --- GitHub publishing snapshots ---
+_github_publish*/
+github_upload_manifest*.json

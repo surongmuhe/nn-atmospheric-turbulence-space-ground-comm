@@ -1,0 +1,13 @@
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+torch
+xgboost
+pyyaml
+tqdm
+EMD-signal
+openpyxl
+joblib
+python-docx
