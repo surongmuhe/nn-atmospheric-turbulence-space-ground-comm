@@ -1,0 +1,26 @@
+{
+  "primary_model": "lstm",
+  "analysis_model": "lstm",
+  "best_model": "lstm",
+  "best_metrics": {
+    "model": "lstm",
+    "RMSE": 0.17421204342803076,
+    "MAE": 0.12552911928618427,
+    "MAPE": 0.00941826798990263,
+    "R2": 0.8352613666994901,
+    "RMSE_h1": 0.15189196288710485,
+    "RMSE_h2": 0.16759464579334032,
+    "RMSE_h3": 0.17370525782220766,
+    "RMSE_h4": 0.17995954645961854,
+    "RMSE_h5": 0.1842364388619202,
+    "RMSE_h6": 0.1855744120356422
+  },
+  "checkpoint": "C:\\Users\\33640\\Desktop\\fusion_forecasting_project\\outputs\\strict_independent_ablation_20260501\\runs\\no_future_mean_target\\seed_82\\checkpoints\\lstm_best.pt",
+  "all_checkpoints": {
+    "lstm": "C:\\Users\\33640\\Desktop\\fusion_forecasting_project\\outputs\\strict_independent_ablation_20260501\\runs\\no_future_mean_target\\seed_82\\checkpoints\\lstm_best.pt"
+  },
+  "active_models": [
+    "lstm"
+  ],
+  "fusion_enabled": false
+}
