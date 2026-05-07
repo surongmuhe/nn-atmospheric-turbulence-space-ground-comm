@@ -1,0 +1,21 @@
+{
+  "primary_model": "patchtst",
+  "analysis_model": "patchtst",
+  "best_model": "patchtst",
+  "best_metrics": {
+    "model": "patchtst",
+    "RMSE": 0.13082021157167656,
+    "MAE": 0.09729498102675074,
+    "MAPE": 0.007259929409097206,
+    "R2": 0.8977119016164621,
+    "RMSE_h1": 0.13082021157167656
+  },
+  "checkpoint": "C:\\Users\\33640\\Desktop\\lstm\\fusion_forecasting_project\\outputs\\strong_baselines_seq72_20260425\\patchtst\\seed_42\\checkpoints\\patchtst_best.pt",
+  "all_checkpoints": {
+    "patchtst": "C:\\Users\\33640\\Desktop\\lstm\\fusion_forecasting_project\\outputs\\strong_baselines_seq72_20260425\\patchtst\\seed_42\\checkpoints\\patchtst_best.pt"
+  },
+  "active_models": [
+    "patchtst"
+  ],
+  "fusion_enabled": false
+}

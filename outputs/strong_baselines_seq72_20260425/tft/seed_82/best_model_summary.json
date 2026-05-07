@@ -1,0 +1,21 @@
+{
+  "primary_model": "tft",
+  "analysis_model": "tft",
+  "best_model": "tft",
+  "best_metrics": {
+    "model": "tft",
+    "RMSE": 0.1262749689104787,
+    "MAE": 0.08835503036192598,
+    "MAPE": 0.006613487076926834,
+    "R2": 0.9046962584598915,
+    "RMSE_h1": 0.1262749689104787
+  },
+  "checkpoint": "C:\\Users\\33640\\Desktop\\lstm\\fusion_forecasting_project\\outputs\\strong_baselines_seq72_20260425\\tft\\seed_82\\checkpoints\\tft_best.pt",
+  "all_checkpoints": {
+    "tft": "C:\\Users\\33640\\Desktop\\lstm\\fusion_forecasting_project\\outputs\\strong_baselines_seq72_20260425\\tft\\seed_82\\checkpoints\\tft_best.pt"
+  },
+  "active_models": [
+    "tft"
+  ],
+  "fusion_enabled": false
+}

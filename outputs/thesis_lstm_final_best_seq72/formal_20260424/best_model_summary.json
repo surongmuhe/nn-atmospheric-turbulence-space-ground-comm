@@ -1,0 +1,21 @@
+{
+  "primary_model": "lstm",
+  "analysis_model": "lstm",
+  "best_model": "lstm",
+  "best_metrics": {
+    "model": "lstm",
+    "RMSE": 0.11635312210302039,
+    "MAE": 0.08340555712863366,
+    "MAPE": 0.006254165281583642,
+    "R2": 0.9190845427087736,
+    "RMSE_h1": 0.11635312210302039
+  },
+  "checkpoint": "outputs\\thesis_lstm_final_best_seq72\\formal_20260424\\checkpoints\\lstm_best.pt",
+  "all_checkpoints": {
+    "lstm": "outputs\\thesis_lstm_final_best_seq72\\formal_20260424\\checkpoints\\lstm_best.pt"
+  },
+  "active_models": [
+    "lstm"
+  ],
+  "fusion_enabled": false
+}

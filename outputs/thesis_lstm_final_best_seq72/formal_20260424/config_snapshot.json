@@ -1,0 +1,240 @@
+{
+  "project": {
+    "name": "thesis_lstm_final_best_seq72",
+    "seed": 42,
+    "output_dir": "outputs\\thesis_lstm_final_best_seq72\\formal_20260424",
+    "log_level": "INFO"
+  },
+  "data": {
+    "file_path": "data/Sklavounos and Cohn, Spring. 2022.xlsx",
+    "datetime_col": "Date",
+    "time_col": "Time",
+    "feature_cols": [
+      "LogCn2",
+      "IRtemp",
+      "SolarFlux",
+      "H2Ocon",
+      "Tair",
+      "UmSonic",
+      "Pair",
+      "hour_sin",
+      "hour_cos"
+    ],
+    "target_col": "LogCn2",
+    "seq_len": 72,
+    "pred_len": 6,
+    "resample_rule": "5min",
+    "train_ratio": 0.7,
+    "val_ratio": 0.15,
+    "target_mode": "delta",
+    "target_aggregation": "mean"
+  },
+  "preprocess": {
+    "scaler": "standard",
+    "status_col": "STATUS",
+    "status_keep_values": [
+      0
+    ],
+    "drop_duplicate_timestamps": true,
+    "sequence_split": {
+      "use_context_history": true
+    },
+    "interpolate": {
+      "enabled": true,
+      "method": "time",
+      "limit": 3
+    },
+    "missing_indicators": {
+      "enabled": false,
+      "columns": [
+        "LogCn2",
+        "IRtemp",
+        "SolarFlux",
+        "H2Ocon",
+        "Tair",
+        "UmSonic"
+      ]
+    },
+    "missing_context_features": {
+      "enabled": false,
+      "columns": [
+        "LogCn2",
+        "IRtemp",
+        "SolarFlux",
+        "H2Ocon",
+        "Tair",
+        "UmSonic"
+      ],
+      "include_any_missing": true,
+      "include_missing_fraction": true,
+      "include_max_run_log1p": true,
+      "include_recent_missing": true,
+      "recent_windows": [
+        3,
+        12
+      ]
+    },
+    "long_gap_mask": {
+      "enabled": true,
+      "columns": [
+        "LogCn2",
+        "IRtemp",
+        "SolarFlux",
+        "H2Ocon",
+        "Tair",
+        "UmSonic"
+      ],
+      "max_missing_run": 6,
+      "pad_steps": 1
+    },
+    "domain_features": {
+      "enabled": true,
+      "solar_day_threshold": 20.0
+    },
+    "solar_regime_features": {
+      "enabled": true,
+      "twilight_low": 5.0,
+      "twilight_high": 120.0,
+      "strong_sun_threshold": 250.0,
+      "recent_windows": [
+        6,
+        12
+      ]
+    },
+    "diff_features": {
+      "enabled": true,
+      "columns": [
+        "LogCn2",
+        "SolarFlux",
+        "Tair",
+        "UmSonic"
+      ],
+      "periods": [
+        1
+      ]
+    },
+    "rolling_features": {
+      "enabled": true,
+      "columns": [
+        "LogCn2",
+        "SolarFlux",
+        "Tair",
+        "UmSonic"
+      ],
+      "windows": [
+        3,
+        12
+      ],
+      "include_mean": true,
+      "include_std": true,
+      "include_min": false,
+      "include_max": false
+    },
+    "clip_quantiles": {
+      "enabled": true,
+      "lower": 0.005,
+      "upper": 0.995,
+      "exclude_cols": [
+        "LogCn2"
+      ]
+    },
+    "time_features": {
+      "keep_temporal_hour": true,
+      "hour_cyclical": true,
+      "dayofyear_cyclical": false
+    }
+  },
+  "experiment": {
+    "primary_model": "lstm",
+    "active_models": [
+      "lstm"
+    ],
+    "regime_split": {
+      "enabled": false
+    }
+  },
+  "train": {
+    "batch_size": 128,
+    "epochs": 35,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "optimizer": "adamw",
+    "scheduler": {
+      "type": "plateau",
+      "factor": 0.6,
+      "patience": 2,
+      "min_lr": 1e-05
+    },
+    "shuffle_train": true,
+    "early_stop_patience": 10,
+    "num_workers": 0,
+    "grad_clip_norm": 1.0,
+    "show_progress": false,
+    "loss": {
+      "huber_weight": 0.35,
+      "huber_beta": 0.2,
+      "diff_weight": 0.0
+    }
+  },
+  "fusion": {
+    "enabled": false
+  },
+  "postprocess": {
+    "residual_correction": {
+      "enabled": false
+    }
+  },
+  "models": {
+    "mlp": {
+      "hidden_sizes": [
+        256,
+        128
+      ],
+      "dropout": 0.2
+    },
+    "lstm": {
+      "hidden_size": 128,
+      "num_layers": 3,
+      "dropout": 0.15,
+      "bidirectional": true,
+      "attention_pool": true,
+      "input_proj_size": 64,
+      "ar_window": 12,
+      "context_window": 12
+    },
+    "gru": {
+      "hidden_size": 64,
+      "num_layers": 2,
+      "dropout": 0.1
+    },
+    "transformer": {
+      "d_model": 64,
+      "nhead": 4,
+      "num_layers": 2,
+      "ff_dim": 128,
+      "dropout": 0.1,
+      "use_positional_encoding": true,
+      "pooling": "last"
+    },
+    "tcn": {
+      "channels": [
+        64,
+        64
+      ],
+      "kernel_size": 3,
+      "dropout": 0.2
+    },
+    "cnn_lstm": {
+      "cnn_channels": 64,
+      "lstm_hidden": 128,
+      "lstm_layers": 2,
+      "dropout": 0.2
+    }
+  },
+  "wandb": {
+    "enabled": false,
+    "project": null,
+    "entity": null,
+    "run_name": null
+  }
+}

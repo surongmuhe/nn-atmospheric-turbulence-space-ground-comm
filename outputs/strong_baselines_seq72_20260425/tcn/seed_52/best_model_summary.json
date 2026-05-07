@@ -1,0 +1,21 @@
+{
+  "primary_model": "tcn",
+  "analysis_model": "tcn",
+  "best_model": "tcn",
+  "best_metrics": {
+    "model": "tcn",
+    "RMSE": 0.12980694233272502,
+    "MAE": 0.09806180386114505,
+    "MAPE": 0.007354110883584508,
+    "R2": 0.8992903120041545,
+    "RMSE_h1": 0.12980694233272502
+  },
+  "checkpoint": "C:\\Users\\33640\\Desktop\\lstm\\fusion_forecasting_project\\outputs\\strong_baselines_seq72_20260425\\tcn\\seed_52\\checkpoints\\tcn_best.pt",
+  "all_checkpoints": {
+    "tcn": "C:\\Users\\33640\\Desktop\\lstm\\fusion_forecasting_project\\outputs\\strong_baselines_seq72_20260425\\tcn\\seed_52\\checkpoints\\tcn_best.pt"
+  },
+  "active_models": [
+    "tcn"
+  ],
+  "fusion_enabled": false
+}
