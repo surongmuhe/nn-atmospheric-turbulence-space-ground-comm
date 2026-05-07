@@ -1,0 +1,52 @@
+{
+  "mode": "source_train_target_test",
+  "source_description": "2021-04-01 to 2021-06-30 source-site records",
+  "target_description": "2006-06-09 to 2006-08-08 external site records",
+  "shared_feature_cols": [
+    "LogCn2",
+    "Tair",
+    "Pair",
+    "UmSonic",
+    "is_daylight",
+    "hour_sin",
+    "hour_cos",
+    "LogCn2_missing_flag",
+    "Tair_missing_flag",
+    "Pair_missing_flag",
+    "UmSonic_missing_flag",
+    "any_sensor_missing",
+    "sensor_missing_fraction",
+    "sensor_missing_run_log1p",
+    "sensor_missing_recent_3",
+    "sensor_missing_recent_12",
+    "LogCn2_diff_1",
+    "Tair_diff_1",
+    "UmSonic_diff_1",
+    "LogCn2_roll_mean_3",
+    "LogCn2_roll_std_3",
+    "LogCn2_roll_mean_12",
+    "LogCn2_roll_std_12",
+    "Tair_roll_mean_3",
+    "Tair_roll_std_3",
+    "Tair_roll_mean_12",
+    "Tair_roll_std_12",
+    "UmSonic_roll_mean_3",
+    "UmSonic_roll_std_3",
+    "UmSonic_roll_mean_12",
+    "UmSonic_roll_std_12"
+  ],
+  "source_rows_after_preprocess": 21730,
+  "target_rows_after_preprocess": 14068,
+  "source_window_counts": {
+    "train": 14902,
+    "val": 3254
+  },
+  "target_window_counts": {
+    "test": 10754
+  },
+  "raw_pred_len": 6,
+  "effective_pred_len": 1,
+  "target_aggregation": "mean",
+  "best_model": "naive_persistence",
+  "best_rmse": 0.29981582248400473
+}

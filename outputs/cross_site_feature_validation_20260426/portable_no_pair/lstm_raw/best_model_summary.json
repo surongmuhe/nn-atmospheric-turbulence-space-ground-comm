@@ -1,0 +1,42 @@
+{
+  "mode": "strict_cross_site_transfer",
+  "source_file": "C:\\Users\\33640\\Desktop\\lstm\\fusion_forecasting_project\\data\\Sklavounos and Cohn, Spring. 2022.xlsx",
+  "target_file": "C:\\Users\\33640\\Desktop\\lstm\\fusion_forecasting_project\\data\\dataWfon0U_ml_ready.csv",
+  "best_model": "lstm",
+  "metrics": {
+    "RMSE": 0.2774102244351403,
+    "MAE": 0.20339361949427276,
+    "MAPE": 0.01464287407751666,
+    "R2": 0.8505062216012653,
+    "RMSE_h1": 0.2774102244351403
+  },
+  "source_time_begin": "2021-04-01 00:00:00",
+  "source_time_end": "2021-06-30 23:55:00",
+  "target_time_begin": "2006-06-09 21:05:00",
+  "target_time_end": "2006-08-08 09:55:00",
+  "source_windows": {
+    "train": 12716,
+    "val": 3075
+  },
+  "target_windows": {
+    "test": 3272
+  },
+  "feature_count": 4,
+  "feature_cols": [
+    "LogCn2",
+    "Tair",
+    "UmSonic",
+    "is_daylight"
+  ],
+  "raw_pred_len": 6,
+  "effective_pred_len": 1,
+  "target_aggregation": "mean",
+  "clip_bounds_source_train_only": false,
+  "daylight_proxy": {
+    "enabled": true,
+    "overwrite_existing": true,
+    "start_hour": 6.0,
+    "end_hour": 18.0
+  },
+  "fusion_weights_file": null
+}

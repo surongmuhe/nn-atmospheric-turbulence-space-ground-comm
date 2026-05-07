@@ -1,0 +1,21 @@
+{
+  "primary_model": "mlp",
+  "analysis_model": "mlp",
+  "best_model": "mlp",
+  "best_metrics": {
+    "model": "mlp",
+    "RMSE": 0.14048531796046454,
+    "MAE": 0.10127684148756244,
+    "MAPE": 0.007589624840729814,
+    "R2": 0.880260751369977,
+    "RMSE_h1": 0.14048531796046454
+  },
+  "checkpoint": "C:\\Users\\33640\\Desktop\\lstm\\fusion_forecasting_project\\outputs\\current_route_main_site\\formal_20260425_delta\\ann_current\\checkpoints\\mlp_best.pt",
+  "all_checkpoints": {
+    "mlp": "C:\\Users\\33640\\Desktop\\lstm\\fusion_forecasting_project\\outputs\\current_route_main_site\\formal_20260425_delta\\ann_current\\checkpoints\\mlp_best.pt"
+  },
+  "active_models": [
+    "mlp"
+  ],
+  "fusion_enabled": false
+}

@@ -1,0 +1,26 @@
+{
+  "mode": "source_train_target_test",
+  "source_description": "2021-04-01 to 2021-06-30 source-site records",
+  "target_description": "2006-06-09 to 2006-08-08 external site records",
+  "shared_feature_cols": [
+    "LogCn2",
+    "Tair",
+    "Pair",
+    "UmSonic",
+    "is_daylight"
+  ],
+  "source_rows_after_preprocess": 21564,
+  "target_rows_after_preprocess": 13463,
+  "source_window_counts": {
+    "train": 14669,
+    "val": 3217
+  },
+  "target_window_counts": {
+    "test": 11783
+  },
+  "raw_pred_len": 6,
+  "effective_pred_len": 1,
+  "target_aggregation": "mean",
+  "best_model": "naive_persistence",
+  "best_rmse": 0.29774541333479393
+}

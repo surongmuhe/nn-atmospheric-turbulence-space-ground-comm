@@ -1,0 +1,67 @@
+{
+  "mode": "strict_cross_site_transfer",
+  "source_file": "C:\\Users\\33640\\Desktop\\lstm\\fusion_forecasting_project\\data\\Sklavounos and Cohn, Spring. 2022.xlsx",
+  "target_file": "C:\\Users\\33640\\Desktop\\lstm\\fusion_forecasting_project\\data\\dataWfon0U_ml_ready.csv",
+  "best_model": "naive_persistence",
+  "metrics": {
+    "RMSE": 0.29981582248400473,
+    "MAE": 0.20792907219122672,
+    "MAPE": 0.01483280447078451,
+    "R2": 0.8403949169560766,
+    "RMSE_h1": 0.29981582248400473
+  },
+  "source_time_begin": "2021-04-01 00:00:00",
+  "source_time_end": "2021-06-30 23:55:00",
+  "target_time_begin": "2006-06-09 21:10:00",
+  "target_time_end": "2006-08-08 10:10:00",
+  "source_windows": {
+    "train": 14902,
+    "val": 3254
+  },
+  "target_windows": {
+    "test": 10754
+  },
+  "feature_count": 29,
+  "feature_cols": [
+    "LogCn2",
+    "Tair",
+    "UmSonic",
+    "is_daylight",
+    "hour_sin",
+    "hour_cos",
+    "LogCn2_missing_flag",
+    "Tair_missing_flag",
+    "UmSonic_missing_flag",
+    "any_sensor_missing",
+    "sensor_missing_fraction",
+    "sensor_missing_run_log1p",
+    "sensor_missing_recent_3",
+    "sensor_missing_recent_12",
+    "LogCn2_diff_1",
+    "Tair_diff_1",
+    "UmSonic_diff_1",
+    "LogCn2_roll_mean_3",
+    "LogCn2_roll_std_3",
+    "LogCn2_roll_mean_12",
+    "LogCn2_roll_std_12",
+    "Tair_roll_mean_3",
+    "Tair_roll_std_3",
+    "Tair_roll_mean_12",
+    "Tair_roll_std_12",
+    "UmSonic_roll_mean_3",
+    "UmSonic_roll_std_3",
+    "UmSonic_roll_mean_12",
+    "UmSonic_roll_std_12"
+  ],
+  "raw_pred_len": 6,
+  "effective_pred_len": 1,
+  "target_aggregation": "mean",
+  "clip_bounds_source_train_only": true,
+  "daylight_proxy": {
+    "enabled": true,
+    "overwrite_existing": true,
+    "start_hour": 6.0,
+    "end_hour": 18.0
+  },
+  "fusion_weights_file": null
+}

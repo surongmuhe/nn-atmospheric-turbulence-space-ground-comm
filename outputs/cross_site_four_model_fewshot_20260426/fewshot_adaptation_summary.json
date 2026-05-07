@@ -1,0 +1,87 @@
+{
+  "output_root": "C:\\Users\\33640\\Desktop\\lstm\\fusion_forecasting_project\\outputs\\cross_site_four_model_fewshot_20260426",
+  "variants": [
+    "ann_current",
+    "ann_window",
+    "lstm_raw",
+    "lstm_improved"
+  ],
+  "ratios": [
+    0.0,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "rows": 44,
+  "generated_at": "2026-04-26T18:55:54",
+  "best_by_ratio": [
+    {
+      "adaptation_ratio": 0.0,
+      "variant": "lstm_raw",
+      "method": "source_only",
+      "target_train_windows": 0,
+      "target_val_windows": 0,
+      "target_test_windows": 3272,
+      "test_start": "2006-06-10 03:15:00",
+      "test_end": "2006-08-07 23:30:00",
+      "RMSE": 0.2734418913969665,
+      "MAE": 0.20037128582857827,
+      "MAPE": 0.014413395221667829,
+      "R2": 0.8547526257536481,
+      "RMSE_h1": 0.2734418913969665,
+      "finetune_epochs": NaN,
+      "finetune_lr": NaN
+    },
+    {
+      "adaptation_ratio": 0.05,
+      "variant": "lstm_improved",
+      "method": "fewshot_finetuned",
+      "target_train_windows": 450,
+      "target_val_windows": 99,
+      "target_test_windows": 10200,
+      "test_start": "2006-06-12 09:00:00",
+      "test_end": "2006-08-07 23:45:00",
+      "RMSE": 0.26770160360199563,
+      "MAE": 0.18805116611560632,
+      "MAPE": 0.013428629313237652,
+      "R2": 0.8728219737022271,
+      "RMSE_h1": 0.26770160360199563,
+      "finetune_epochs": 15.0,
+      "finetune_lr": 0.0003
+    },
+    {
+      "adaptation_ratio": 0.1,
+      "variant": "lstm_improved",
+      "method": "fewshot_finetuned",
+      "target_train_windows": 804,
+      "target_val_windows": 277,
+      "target_test_windows": 9663,
+      "test_start": "2006-06-14 21:55:00",
+      "test_end": "2006-08-07 23:45:00",
+      "RMSE": 0.26048073666662497,
+      "MAE": 0.17667293836073752,
+      "MAPE": 0.01255276210835519,
+      "R2": 0.8807026466133548,
+      "RMSE_h1": 0.26048073666662497,
+      "finetune_epochs": 15.0,
+      "finetune_lr": 0.0003
+    },
+    {
+      "adaptation_ratio": 0.2,
+      "variant": "lstm_improved",
+      "method": "fewshot_finetuned",
+      "target_train_windows": 1599,
+      "target_val_windows": 404,
+      "target_test_windows": 8741,
+      "test_start": "2006-06-27 04:35:00",
+      "test_end": "2006-08-07 23:45:00",
+      "RMSE": 0.24756204878672983,
+      "MAE": 0.16968261573163368,
+      "MAPE": 0.012079477003404981,
+      "R2": 0.8936545901641524,
+      "RMSE_h1": 0.24756204878672983,
+      "finetune_epochs": 15.0,
+      "finetune_lr": 0.0003
+    }
+  ]
+}

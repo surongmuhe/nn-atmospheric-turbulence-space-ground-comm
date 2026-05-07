@@ -1,0 +1,220 @@
+{
+  "project": {
+    "name": "external_site_four_model_lstm_raw",
+    "seed": 42,
+    "output_dir": "C:\\Users\\33640\\Desktop\\lstm\\fusion_forecasting_project\\outputs\\external_site_lstm_raw_sweep_20260426\\hs128_l2_do0p0_lr0p0005",
+    "log_level": "INFO"
+  },
+  "data": {
+    "file_path": "data/dataWfon0U_ml_ready.csv",
+    "datetime_col": "time",
+    "time_col": null,
+    "feature_cols": [
+      "LogCn2",
+      "Tair",
+      "Pair",
+      "UmSonic",
+      "is_daylight"
+    ],
+    "target_col": "LogCn2",
+    "seq_len": 72,
+    "pred_len": 6,
+    "resample_rule": "5min",
+    "train_ratio": 0.7,
+    "val_ratio": 0.15,
+    "target_mode": "delta",
+    "target_aggregation": "mean"
+  },
+  "preprocess": {
+    "scaler": "standard",
+    "source_status_col": "STATUS",
+    "source_status_keep_values": [
+      0
+    ],
+    "target_status_col": null,
+    "target_status_keep_values": null,
+    "drop_duplicate_timestamps": true,
+    "daylight_proxy": {
+      "enabled": true,
+      "overwrite_existing": true,
+      "start_hour": 6.0,
+      "end_hour": 18.0
+    },
+    "interpolate": {
+      "enabled": false,
+      "method": "time",
+      "limit": 3
+    },
+    "missing_indicators": {
+      "enabled": false,
+      "columns": [
+        "LogCn2",
+        "Tair",
+        "Pair",
+        "UmSonic"
+      ]
+    },
+    "missing_context_features": {
+      "enabled": false,
+      "columns": [
+        "LogCn2",
+        "Tair",
+        "Pair",
+        "UmSonic"
+      ]
+    },
+    "long_gap_mask": {
+      "enabled": false,
+      "columns": [
+        "LogCn2",
+        "Tair",
+        "Pair",
+        "UmSonic"
+      ]
+    },
+    "domain_features": {
+      "enabled": false
+    },
+    "solar_regime_features": {
+      "enabled": false
+    },
+    "diff_features": {
+      "enabled": false,
+      "columns": [
+        "LogCn2",
+        "Tair",
+        "UmSonic"
+      ],
+      "periods": [
+        1
+      ]
+    },
+    "rolling_features": {
+      "enabled": false,
+      "columns": [
+        "LogCn2",
+        "Tair",
+        "UmSonic"
+      ],
+      "windows": [
+        3,
+        12
+      ],
+      "include_mean": true,
+      "include_std": true,
+      "include_min": false,
+      "include_max": false
+    },
+    "clip_quantiles": {
+      "enabled": false,
+      "lower": 0.005,
+      "upper": 0.995,
+      "exclude_cols": [
+        "LogCn2"
+      ]
+    },
+    "time_features": {
+      "keep_temporal_hour": false,
+      "hour_cyclical": false,
+      "dayofyear_cyclical": false
+    },
+    "status_col": null,
+    "status_keep_values": null,
+    "sequence_split": {
+      "use_context_history": true
+    }
+  },
+  "experiment": {
+    "primary_model": "lstm",
+    "active_models": [
+      "lstm"
+    ],
+    "regime_split": {
+      "enabled": false
+    }
+  },
+  "train": {
+    "batch_size": 128,
+    "epochs": 45,
+    "learning_rate": 0.0005,
+    "weight_decay": 0.0001,
+    "optimizer": "adamw",
+    "scheduler": {
+      "type": "plateau",
+      "factor": 0.6,
+      "patience": 2,
+      "min_lr": 1e-05
+    },
+    "shuffle_train": true,
+    "early_stop_patience": 10,
+    "num_workers": 0,
+    "grad_clip_norm": 1.0,
+    "show_progress": false,
+    "loss": {
+      "huber_weight": 0.35,
+      "huber_beta": 0.2,
+      "diff_weight": 0.0
+    }
+  },
+  "fusion": {
+    "enabled": false
+  },
+  "postprocess": {
+    "residual_correction": {
+      "enabled": false
+    }
+  },
+  "models": {
+    "mlp": {
+      "hidden_sizes": [
+        256,
+        128
+      ],
+      "dropout": 0.2
+    },
+    "lstm": {
+      "hidden_size": 128,
+      "num_layers": 2,
+      "dropout": 0.0,
+      "bidirectional": false,
+      "attention_pool": false,
+      "input_proj_size": null,
+      "ar_window": 0,
+      "context_window": 12
+    },
+    "gru": {
+      "hidden_size": 64,
+      "num_layers": 2,
+      "dropout": 0.1
+    },
+    "transformer": {
+      "d_model": 64,
+      "nhead": 4,
+      "num_layers": 2,
+      "ff_dim": 128,
+      "dropout": 0.1,
+      "use_positional_encoding": true,
+      "pooling": "last"
+    },
+    "tcn": {
+      "channels": [
+        64,
+        64
+      ],
+      "kernel_size": 3,
+      "dropout": 0.2
+    },
+    "cnn_lstm": {
+      "cnn_channels": 64,
+      "lstm_hidden": 128,
+      "lstm_layers": 2,
+      "dropout": 0.2
+    }
+  },
+  "wandb": {
+    "enabled": false,
+    "project": null,
+    "entity": null,
+    "run_name": null
+  }
+}
