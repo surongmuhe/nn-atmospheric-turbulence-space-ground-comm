@@ -1,0 +1,21 @@
+{
+  "primary_model": "lstm",
+  "analysis_model": "lstm",
+  "best_model": "lstm",
+  "best_metrics": {
+    "model": "lstm",
+    "RMSE": 0.11946329381155439,
+    "MAE": 0.08768252686718729,
+    "MAPE": 0.006557919929236774,
+    "R2": 0.9147009135064992,
+    "RMSE_h1": 0.11946329381155439
+  },
+  "checkpoint": "C:\\Users\\33640\\Desktop\\lstm\\fusion_forecasting_project\\outputs\\strong_baselines_seq72_20260425\\lstm_improved\\seed_72\\checkpoints\\lstm_best.pt",
+  "all_checkpoints": {
+    "lstm": "C:\\Users\\33640\\Desktop\\lstm\\fusion_forecasting_project\\outputs\\strong_baselines_seq72_20260425\\lstm_improved\\seed_72\\checkpoints\\lstm_best.pt"
+  },
+  "active_models": [
+    "lstm"
+  ],
+  "fusion_enabled": false
+}
