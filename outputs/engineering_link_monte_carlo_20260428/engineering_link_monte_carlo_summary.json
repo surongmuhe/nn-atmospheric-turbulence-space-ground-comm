@@ -1,0 +1,122 @@
+{
+  "config": {
+    "wavelength_m": 1.55e-06,
+    "base_turbulence_path_m": 500.0,
+    "altitude_m": 550000.0,
+    "reference_range_m": 550000.0,
+    "zenith_clear_snr_db": 22.0,
+    "min_elevation_deg": 12.0,
+    "max_elevation_deg": 82.0,
+    "pass_len_steps": 36,
+    "atmospheric_loss_db_per_airmass": 0.05,
+    "pointing_jitter_urad": 3.0,
+    "beam_divergence_urad": 20.0,
+    "pointing_a0": 0.95,
+    "max_rytov_variance": 6.0,
+    "utility_outage_penalty": 8.0,
+    "block_bits": 1024,
+    "outage_bler_threshold": 0.1
+  },
+  "best_policy": {
+    "policy": "Oracle Policy",
+    "policy_kind": "oracle",
+    "rows": 3225,
+    "avg_mission_utility": 1.956208869104927,
+    "avg_goodput": 2.426229024143687,
+    "outage_rate": 0.058752519379844964,
+    "availability": 0.9412474806201551,
+    "avg_coded_ber": 4.646428344837444e-05,
+    "p99_coded_ber": 0.0215118040936337,
+    "avg_bler": 0.005411623299883335,
+    "switch_count": 636,
+    "switching_rate": 0.1972093023255814,
+    "robust_mode_share": 0.21085271317829457,
+    "high_rate_mode_share": 0.5804651162790697
+  },
+  "improved_lstm": {
+    "policy": "Improved LSTM Policy",
+    "policy_kind": "forecast",
+    "rows": 3225,
+    "avg_mission_utility": 1.9374190279759165,
+    "avg_goodput": 2.4347833690611878,
+    "outage_rate": 0.06217054263565892,
+    "availability": 0.9378294573643411,
+    "avg_coded_ber": 4.742420780612874e-05,
+    "p99_coded_ber": 0.021660881836380177,
+    "avg_bler": 0.005533816935652716,
+    "switch_count": 672,
+    "switching_rate": 0.20837209302325582,
+    "robust_mode_share": 0.2096124031007752,
+    "high_rate_mode_share": 0.5854263565891473
+  },
+  "tcn": {
+    "policy": "TCN Policy",
+    "policy_kind": "forecast",
+    "rows": 3225,
+    "avg_mission_utility": 1.9364582460254742,
+    "avg_goodput": 2.4356985561029934,
+    "outage_rate": 0.06240503875968992,
+    "availability": 0.93759496124031,
+    "avg_coded_ber": 4.764175837483453e-05,
+    "p99_coded_ber": 0.0215118040936337,
+    "avg_bler": 0.005559073039151477,
+    "switch_count": 694,
+    "switching_rate": 0.2151937984496124,
+    "robust_mode_share": 0.20992248062015503,
+    "high_rate_mode_share": 0.5823255813953488
+  },
+  "lstm_raw": {
+    "policy": "LSTM-raw Policy",
+    "policy_kind": "forecast",
+    "rows": 3225,
+    "avg_mission_utility": 1.9339001998108607,
+    "avg_goodput": 2.4427033005860546,
+    "outage_rate": 0.06360038759689922,
+    "availability": 0.9363996124031008,
+    "avg_coded_ber": 4.788335386805697e-05,
+    "p99_coded_ber": 0.0215118040936337,
+    "avg_bler": 0.0056026202598301504,
+    "switch_count": 663,
+    "switching_rate": 0.2055813953488372,
+    "robust_mode_share": 0.21364341085271318,
+    "high_rate_mode_share": 0.5922480620155038
+  },
+  "bootstrap": [
+    {
+      "metric": "mission_utility",
+      "policy_a": "Improved LSTM Policy",
+      "policy_b": "TCN Policy",
+      "mean_delta_a_minus_b": 0.0009607819504423072,
+      "ci95_low": -0.001958318499053697,
+      "ci95_high": 0.003935830043486223,
+      "prob_delta_positive": 0.7406666666666667
+    },
+    {
+      "metric": "mission_utility",
+      "policy_a": "Improved LSTM Policy",
+      "policy_b": "LSTM-raw Policy",
+      "mean_delta_a_minus_b": 0.0035188281650558434,
+      "ci95_low": 0.0006846868493272821,
+      "ci95_high": 0.006375139905221143,
+      "prob_delta_positive": 0.9926666666666667
+    },
+    {
+      "metric": "outage_rate",
+      "policy_a": "TCN Policy",
+      "policy_b": "Improved LSTM Policy",
+      "mean_delta_a_minus_b": 0.00023449612403100763,
+      "ci95_low": -0.0011470397286821702,
+      "ci95_high": 0.001580121124031008,
+      "prob_delta_positive": 0.6176666666666667
+    },
+    {
+      "metric": "outage_rate",
+      "policy_a": "LSTM-raw Policy",
+      "policy_b": "Improved LSTM Policy",
+      "mean_delta_a_minus_b": 0.0014298449612403098,
+      "ci95_low": 6.077034883720942e-05,
+      "ci95_high": 0.0028527858527131783,
+      "prob_delta_positive": 0.978
+    }
+  ]
+}
